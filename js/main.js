@@ -36,11 +36,14 @@ function newMatch() {
     theImg.classList = "fruitImg hidden"
     document.querySelector("#startStop").classList.add("hidden");
     number = Math.floor(Math.random() * 10);
-    //loop through 10 matching buttons and assign the correct classes and ids
-    for(let i = 0; i<10; i++){
+    let selectors = document.querySelector(".selector").classList;
+
+    //loop through 10 matching buttons and assign the correct classes and ids to selectors
+    for(let i = 0; i< 10; i++){
         randomNum = Math.floor(Math.random()*ListOfFruits.length);
         //Make so that there aren't any repeats
-        //console.log(document.querySelectorAll("selector").className.contains(`ListofFruits[randomNum].english`));
+        //loop through selectors and make sure that there are no repeats
+        //define all selectors and loop through and if repeat i--???
         document.querySelector(`.selector${i}`).className = `selector selector${i}`;
         document.querySelector(`.selector${i}`).id = "";
         document.querySelector(`.selector${i}`).classList.add(ListOfFruits[randomNum].english);
@@ -49,10 +52,12 @@ function newMatch() {
         document.querySelector(`.selector${i}`).id = `${ListOfFruits[randomNum].english}`;
     };  
     // console.log(ListOfFruits[randomNum].url)
-    theImg.classList.remove("hidden");
-    theImg.classList.add(ListOfFruits[randomNum].english)
+    randomNum = Math.floor(Math.random()*ListOfFruits.length);
+     theImg.classList.remove("hidden");
+     theImg.classList.add(ListOfFruits[randomNum].english)
     let classImgArr = theImg.classList.value.split(" ")
     if (ListOfFruits[randomNum].url === "none"){
+        theImg.src = ListOfFruits[randomNum].url
         document.querySelector("#noImage").classList.remove("hidden")
         document.querySelector("#noImage").innerText = `${ListOfFruits[randomNum].english}`
     } else {
@@ -66,7 +71,6 @@ function newMatch() {
     //fix so that the last button doesn't always give the correct answer
     let koreanWord = ListOfFruits.map(e => e.english).indexOf(`${classImgArr[1]}`);
     //create new random number for putting selector at random place below
-    //console.log(ListOfFruits[randomNum].url);
     let randomNumforSelector = Math.floor(Math.random() * 10);
     document.querySelector(`.selector${randomNumforSelector}`).classList = (`selector selector${randomNumforSelector} ${classImgArr[1]}`)
     document.querySelector(`.selector${randomNumforSelector}`).innerText = `${ListOfFruits[koreanWord].korean}`;
