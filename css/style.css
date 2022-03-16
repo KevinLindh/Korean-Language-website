@@ -1,0 +1,61 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+body{
+  text-align: center;
+}
+.selecttrainingmode{
+  border: 1px solid red;
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+}
+.selecttrainingmode:hover{
+  background-color: red;
+}
+.selecttrainingmode:active{
+  background-color: red;
+  box-shadow: 0 1px grey;
+  transform: translateY(2px);
+}
+.hidden{
+  display: none;
+}
+.checkIfMatchimg{
+  width: 100px;
+}
+#guessImg{
+  height: 400px;
+  width: 100%;
+}
+.fruitImg{
+  height: 400px;
+  width: 300px;
+}
+.selector{
+  border: 2px solid black;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 2rem;
+}
+.selector:hover{
+  background-color: #1ebbd7
+}
+.selector:active{
+  background-color: #1ebbd7;
+  box-shadow: 0 2px #666;
+  transform: translateY(2px);
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
